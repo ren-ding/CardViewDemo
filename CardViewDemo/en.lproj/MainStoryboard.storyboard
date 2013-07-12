@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Card View Demo View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="CardViewDemoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jkq-Ev-1VM" customClass="PlayingCardView">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5xi-fA-N0H" appends="YES" id="3Kx-bq-xmx"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Jkq-Ev-1VM" firstAttribute="centerY" secondItem="3" secondAttribute="centerY" type="default" id="tJz-fy-2b2"/>
+                            <constraint firstItem="Jkq-Ev-1VM" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="tvk-bs-hxB"/>
+                            <constraint firstItem="Jkq-Ev-1VM" firstAttribute="top" secondItem="3" secondAttribute="top" constant="90" id="vXi-an-gdu"/>
+                            <constraint firstItem="Jkq-Ev-1VM" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="70" id="wZf-Ys-cWc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playingCardView" destination="Jkq-Ev-1VM" id="r8h-X9-Fcu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="5xi-fA-N0H">
+                    <connections>
+                        <action selector="swip:" destination="2" id="RgC-69-vfa"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-119" y="28"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="CardViewDemoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CardViewDemoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="swip:" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="playingCardView" candidateClass="PlayingCardView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PlayingCardView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayingCardView.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
